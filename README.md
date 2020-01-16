@@ -13,7 +13,7 @@
 
 1.  Clone this repo;
 2.  Duplicate `.env.example` and rename it to `.env`. Fill the IPFS_GATEWAY variables.
-3.  Edit the add fields to the object assigned to `file` inside `index.js`.
+3.  Paste the JSON file to be uploaded on the root and name it `input.json`,
 4.  Run `yarn` to install dependencies and then `yarn start` to upload.
 
 ## Other Scripts

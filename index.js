@@ -8,6 +8,7 @@ if (!process.env.IPFS_GATEWAY) {
 const fetch = require('node-fetch')
 const Archon = require('@kleros/archon')
 const TextEncoder = require('text-encoder-lite').TextEncoderLite
+const file = require('./input.json')
 
 /**
  * Send file to an IPFS node.
@@ -36,12 +37,6 @@ const ipfsPublish = async (fileName, data) => {
 }
 
 ;(async () => {
-  // Edit here. ---------
-
-  const file = {} // JSON to be uploaded.
-
-  // --------------------
-
   const fileData = new TextEncoder('utf-8').encode(JSON.stringify(file))
   /* eslint-disable-next-line unicorn/number-literal-case */
   const fileMultihash = Archon.utils.multihashFile(file, 0x1b)
