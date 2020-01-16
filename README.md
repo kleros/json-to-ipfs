@@ -9,6 +9,8 @@
   <a href="https://app.netlify.com/sites/ecstatic-jackson-749344/deploys"><img src="https://api.netlify.com/api/v1/badges/ff0eb1e7-e70c-4319-9e5c-f8532b053900/deploy-status"></a>
 </p>
 
+Tool to quickly upload JSON files to ipfs
+
 ## Usage
 
 1.  Clone this repo;
