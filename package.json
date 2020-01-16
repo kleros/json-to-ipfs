@@ -1,0 +1,56 @@
+{
+  "name": "ipfs-upload",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node -r dotenv/config index.js",
+    "release": "standard-version",
+    "lint": "eslint './index.js'",
+    "lint:eslint:fix": "eslint './index.js' --fix",
+    "lint:prettier:fix": "prettier --write './index.js'",
+    "format": "yarn run lint:eslint:fix && yarn run lint:prettier:fix"
+  },
+  "dependencies": {
+    "@kleros/archon": "^0.10.1",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0",
+    "text-encoder-lite": "^2.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "eslint": "5",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-unicorn": "^9.1.1",
+    "husky": "^3.0.0",
+    "less": "^3.9.0",
+    "prettier": "^1.18.2",
+    "standard-version": "^6.0.1"
+  },
+  "standard": {
+    "ignore": [
+      "/node_modules/**"
+    ],
+    "globals": [
+      "fetch"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
