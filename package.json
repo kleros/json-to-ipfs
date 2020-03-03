@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node -r dotenv/config index.js",
+    "up": "node -r dotenv/config index.js",
     "release": "standard-version",
     "lint": "eslint './index.js'",
     "lint:eslint:fix": "eslint './index.js' --fix",
