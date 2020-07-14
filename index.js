@@ -6,9 +6,10 @@ if (!process.env.IPFS_GATEWAY) {
 }
 
 const fetch = require('node-fetch')
-const Archon = require('@kleros/archon')
 const TextEncoder = require('text-encoder-lite').TextEncoderLite
 const file = require('./input.json')
+
+const FILE_NAME = 'meta-evidence.json'
 
 /**
  * Send file to an IPFS node.
@@ -37,12 +38,13 @@ const ipfsPublish = async (fileName, data) => {
 }
 
 ;(async () => {
-  const fileData = new TextEncoder('utf-8').encode(JSON.stringify(file))
+  const fileData = new TextEncoder('utf-8').encode(
+    JSON.stringify(file, null, 2)
+  )
   /* eslint-disable-next-line unicorn/number-literal-case */
-  const fileMultihash = Archon.utils.multihashFile(file, 0x1b)
 
   console.info('Uploading to ipfs...')
-  const ipfsObject = await ipfsPublish(fileMultihash, fileData)
+  const ipfsObject = await ipfsPublish(FILE_NAME, fileData)
   const ipfsPath = `/ipfs/${ipfsObject[1].hash + ipfsObject[0].path}`
 
   console.info(`File available at ${ipfsPath}`)
