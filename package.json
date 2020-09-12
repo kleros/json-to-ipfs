@@ -14,7 +14,7 @@
   "dependencies": {
     "@kleros/archon": "^0.10.1",
     "dotenv": "^8.2.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "text-encoder-lite": "^2.0.0"
   },
   "devDependencies": {
